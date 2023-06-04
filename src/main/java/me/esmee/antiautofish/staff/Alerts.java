@@ -5,18 +5,18 @@ import java.util.UUID;
 
 public class Alerts {
 
-    private static final ArrayList<UUID> toggledAlertsOn = new ArrayList<>();
+    private static final ArrayList<UUID> toggledAlertsOff = new ArrayList<>();
 
     public static void addToggledAlertsOn(UUID uuid) {
-        toggledAlertsOn.add(uuid);
+        toggledAlertsOff.remove(uuid);
     }
 
     public static void removeToggledAlertsOn(UUID uuid) {
-        toggledAlertsOn.remove(uuid);
+        toggledAlertsOff.add(uuid);
     }
 
     public static boolean hasAlertsOn(UUID uuid) {
-        return toggledAlertsOn.contains(uuid);
+        return !toggledAlertsOff.contains(uuid);
     }
 
 }

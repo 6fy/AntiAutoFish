@@ -17,16 +17,19 @@ public class ToggleAlertsCommand implements CommandExecutor {
         Player player = (Player) sender;
 
         if (!player.hasPermission(Config.permission)) {
-            player.sendMessage(Config.prefix + ChatColor.RED + "You do not have permission to use this command!");
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&',
+                    Config.prefix + ChatColor.RED + "You do not have permission to use this command!"));
             return true;
         }
 
         if (Alerts.hasAlertsOn(player.getUniqueId())) {
             Alerts.removeToggledAlertsOn(player.getUniqueId());
-            player.sendMessage(Config.prefix + ChatColor.RED + "You have toggled off alerts!");
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&',
+                    Config.prefix + ChatColor.RED + "You have toggled off alerts!"));
         } else {
             Alerts.addToggledAlertsOn(player.getUniqueId());
-            player.sendMessage(Config.prefix + ChatColor.GREEN + "You have toggled on alerts!");
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&',
+                    Config.prefix + ChatColor.GREEN + "You have toggled on alerts!"));
         }
 
         return true;
