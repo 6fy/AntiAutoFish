@@ -2,7 +2,6 @@ name: AntiAutoFish
 version: '${project.version}'
 main: me.esmee.antiautofish.AntiAutoFish
 author: sadesmee
-softdepend: [PlaceholderAPI]
 commands:
   antiautofish:
     description: AntiAutoFish toggle command
