@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AntiAutoFish">
+    <output-path>$PROJECT_DIR$/Server/plugins</output-path>
+    <root id="archive" name="AntiAutoFish.jar">
+      <element id="module-output" name="AntiAutoFish" />
+    </root>
+  </artifact>
+</component>

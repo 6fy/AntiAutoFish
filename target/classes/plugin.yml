@@ -1,0 +1,5 @@
+name: AntiAutoFish
+version: '1.0-SNAPSHOT'
+main: me.esmee.antiautofish.AntiAutoFish
+author: sadesmee
+softdepend: [PlaceholderAPI]
