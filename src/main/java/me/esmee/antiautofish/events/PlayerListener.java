@@ -45,13 +45,12 @@ public class PlayerListener implements Listener {
         if (!hook.isSuspicious()) return;
 
         double averageProbability = Fishers.getAverageProbability(player.getUniqueId());
-        double roundAverageProbability = (double) Math.round(averageProbability * 100) / 100;
 
         String text = ChatColor.translateAlternateColorCodes('&',
                 Config.prefix + Config.alertMessage
                         .replace("%player%", player.getName())
                         .replace("%probability%", String.valueOf(hook.getProbability()))
-                        .replace("%average%", String.valueOf(roundAverageProbability))
+                        .replace("%average%", String.valueOf(averageProbability))
         );
 
         TextComponent msg = new TextComponent(text);

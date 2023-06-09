@@ -1,8 +1,12 @@
 package me.esmee.antiautofish;
 
-import me.esmee.antiautofish.commands.ToggleAlertsCommand;
+import me.esmee.antiautofish.commands.AutoFishCommand;
 import me.esmee.antiautofish.config.Config;
 import me.esmee.antiautofish.events.PlayerListener;
+import me.esmee.antiautofish.fishing.Fishers;
+import me.esmee.antiautofish.fishing.Hooked;
+import me.esmee.antiautofish.gui.events.GUIClickListener;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,9 +25,10 @@ public final class AntiAutoFish extends JavaPlugin {
         PluginManager manager = this.getServer().getPluginManager();
 
         manager.registerEvents(new PlayerListener(), this);
+        manager.registerEvents(new GUIClickListener(), this);
 
         // Register commands
-        this.getCommand("antiautofish").setExecutor(new ToggleAlertsCommand());
+        this.getCommand("antiautofish").setExecutor(new AutoFishCommand());
 
         // Log confirmation telling the server this plugin has been enabled
         this.getLogger().info("AntiAutoFish has been enabled!");
